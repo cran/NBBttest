@@ -1,0 +1,18 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("grDevices", "heat.colors")
+importFrom("stats","as.dendrogram",
+"as.dist","cor", "dist","hclust",
+"pt", "rnbinom", "runif", "var",
+"na.omit","lm")
+importFrom("utils", "head")
+#import(S4Vectors)
+#import(utils)
+import(gplots)
+import(gtools)
+import(graphics)
+import(grDevices)
+#import(GenomicRanges)
+
+
+
+
