@@ -67,6 +67,6 @@ for Large-scale Differential Transcription Analysis.
 \examples{
 data(jkttcell) 	
 res<-mbetattest(X=jkttcell[1:100, ], nci=7, na=3, 
-nb=3, alpha=0.05, norm="yes",C=0,side="both", 
-level="isoform")
+nb=3, alpha=0.05, norm="yes", side="both", 
+level="isoform",padjust_methods="fdr",C=0)
 }

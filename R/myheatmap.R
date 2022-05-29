@@ -21,7 +21,8 @@ myheatmap <-
              adjcol = c(1, 1) ,
              rwangle = 30,
              clangle = 30,
-             maptitle) {
+             maptitle
+             ) {
         dat <- as.data.frame(dat)
         #dat<-GRanges(dat)
         try (if (is.null(dim(dat)))
@@ -171,9 +172,9 @@ myheatmap <-
         }
         breaks <- sort(brks)
         #tmpbreaks <- sort(breaks)
-        
+
         if (tree == "none") {
-            if (is.null(rowBarColor) & is.null(colBarColor)) {
+              if (is.null(rowBarColor) & is.null(colBarColor)) {
                 heatmap.2(
                     z,
                     Rowv = FALSE,
@@ -199,10 +200,10 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
-            } else if (is.null(rowBarColor) &
+                    )
+                } else if (is.null(rowBarColor) &
                        !is.null(colBarColor)) {
-                heatmap.2(
+                   heatmap.2(
                     z,
                     Rowv = FALSE,
                     Colv = FALSE,
@@ -229,11 +230,11 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     # breaks = breaks
-                )
+                    )
                 
-            } else if (!is.null(rowBarColor)
+                 } else if (!is.null(rowBarColor)
                        & is.null(colBarColor)) {
-                heatmap.2(
+                     heatmap.2(
                     z,
                     Rowv = FALSE,
                     Colv = FALSE,
@@ -260,9 +261,9 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
-            } else{
-                heatmap.2(
+                    )
+                }else{
+                    heatmap.2(
                     z,
                     Rowv = FALSE,
                     Colv = FALSE,
@@ -291,11 +292,11 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
-            }
+                    )
+                  }
             
-        } else{
-            if (is.null(rowBarColor) & is.null(colBarColor)) {
+      }else{
+                if (is.null(rowBarColor) & is.null(colBarColor)) {
                 heatmap.2(
                     z,
                     Rowv = Rowv,
@@ -335,11 +336,11 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
+                    )
                 
-            } else if (!is.null(rowBarColor) &
+                } else if (!is.null(rowBarColor) &
                        is.null(colBarColor)) {
-                heatmap.2(
+                     heatmap.2(
                     z,
                     Rowv = Rowv,
                     Colv = Colv,
@@ -379,10 +380,10 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
-            } else if (is.null(rowBarColor) &
+                   )
+                } else if (is.null(rowBarColor) &
                        !is.null(colBarColor)) {
-                heatmap.2(
+                     heatmap.2(                    
                     z,
                     Rowv = Rowv,
                     Colv = Colv,
@@ -408,7 +409,7 @@ myheatmap <-
                     key.xlab = "zscore",
                     key.ylab = NA,
                     colCol = colBarColor,
-                    ColSideColors = colBarColor,
+                    ColSideColors =colBarColor,
                     main = maptitle,
                     cex.main = 5.0,
                     adjRow = adjrow,
@@ -421,10 +422,11 @@ myheatmap <-
                     srtCol = clangle,
                     offsetRow = 1.5,
                     offsetCol = 0,
-                    breaks = breaks
-                )
-            } else {
-                heatmap.2(
+                    breaks = breaks,
+ 
+                    )
+                 } else {
+                     heatmap.2(
                     z,
                     Rowv = Rowv,
                     Colv = Colv,
@@ -466,8 +468,11 @@ myheatmap <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     breaks = breaks
-                )
-            }
+                   )
+                }
         }
-        #heatmap.2(dat, srtCol=NULL)
+    
+   #    legend(par('usr')[2], par('usr')[4], xpd=NA,legend=legend,fill=fill, 
+   #    border=TRUE, bty="n", y.intersp = 0.7, cex=1.8,title=title)
+         #heatmap.2(dat, srtCol=NULL)
     }

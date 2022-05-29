@@ -3,7 +3,7 @@ importFrom("grDevices", "heat.colors")
 importFrom("stats","as.dendrogram",
 "as.dist","cor", "dist","hclust",
 "pt", "rnbinom", "runif", "var",
-"na.omit","lm")
+"na.omit","lm","p.adjust")
 importFrom("utils", "head")
 #import(S4Vectors)
 #import(utils)

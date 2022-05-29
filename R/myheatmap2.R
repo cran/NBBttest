@@ -19,7 +19,9 @@ myheatmap2 <-
              adjcol = c(1, 1) ,
              rwangle = 30,
              clangle = 30,
-             maptitle = "") {
+             maptitle = "",
+             keyvalue
+             ) {
         # import data
         #require(gplots)
         dat <- as.data.frame(dat)
@@ -167,6 +169,8 @@ myheatmap2 <-
         } else{
             clnames = ""
         }
+        
+      
         if (tree == "none") {
             if (is.null(rowBarColor) & is.null(colBarColor)) {
                 heatmap.2(
@@ -179,7 +183,7 @@ myheatmap2 <-
                     dendrogram = "none",
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     main = maptitle,
                     cex.main = 5.0,
@@ -208,8 +212,8 @@ myheatmap2 <-
                     scale = "none",
                     dendrogram = "none",
                     keysize = ky,
-                    key.title = NA,
-                    key.xlab = "count",
+                    key.title =NA,
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colCol = colBarColor,
                     ColSideColors = colBarColor,
@@ -240,7 +244,7 @@ myheatmap2 <-
                     dendrogram = "none",
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colRow = rowBarColor,
                     RowSideColors = rowBarColor,
@@ -272,7 +276,7 @@ myheatmap2 <-
                     dendrogram = "none",
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colRow = rowBarColor,
                     RowSideColors = rowBarColor,
@@ -322,7 +326,7 @@ myheatmap2 <-
                     dendrogram = tree,
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     main = maptitle,
                     cex.main = 5.0,
@@ -365,7 +369,7 @@ myheatmap2 <-
                     dendrogram = tree,
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colRow = rowBarColor,
                     RowSideColors = rowBarColor,
@@ -411,7 +415,7 @@ myheatmap2 <-
                     dendrogram = tree,
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colCol = colBarColor,
                     ColSideColors = colBarColor,
@@ -428,7 +432,7 @@ myheatmap2 <-
                     offsetRow = 1.5,
                     offsetCol = 0,
                     key.par=list(mar=c(4,0,1,2), cex=1.0, cex.lab=1.30, cex.axis=1.5),
-                    lwid = c(3, 4)
+                    lwid = c(3, 10)
                     #                   lmat=rbind( c(0, 3), c(2,1), c(0,4) ), lhei=c(1.5, 4, 2 )
                 )
             } else {
@@ -455,7 +459,7 @@ myheatmap2 <-
                     dendrogram = tree,
                     keysize = ky,
                     key.title = NA,
-                    key.xlab = "count",
+                    key.xlab = keyvalue,
                     key.ylab = NA,
                     colRow = rowBarColor,
                     RowSideColors = as.character(rowBarColor),
@@ -476,9 +480,9 @@ myheatmap2 <-
                     key.par=list(mar=c(4,0,1,2), cex=1.0, cex.lab=1.30, cex.axis=1.5),
                     lwid = c(3, 4)
                     #                    lmat=rbind( c(0, 3), c(2,1), c(0,4) ), lhei=c(1.5, 4, 2 )
-
-                )
+                 
+                   )
+                }
             }
-        }
-        #heatmap.2(dat, srtCol=NULL)
+
     }

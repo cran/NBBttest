@@ -16,7 +16,7 @@ myheatmap2(dat, IDcol=1, nci=NULL, r, colrs=
 =NULL,  colBarColor=NULL, labrow="yes", 
 labcol="yes", rsort="yes", adjrow=c(0.2, 0.0 ), 
 adjcol = c(1, 1) , rwangle=30, clangle=30, 
-maptitle="")
+maptitle="",keyvalue)
 }
 \arguments{
 \item{dat}{
@@ -138,6 +138,9 @@ heatmap object: angle of ylab. The default value is 30.
 string argument for giving heatmap title. The default 
 value is set to be empty string ' '.
 }
+\item{keyvalue}{
+sting argument for name of key x-axis.	
+}
 }
 \details{
 This function uses selection to choose genes or isoforms 
@@ -190,7 +193,7 @@ tree="both", method="euclidean", ky=1.5,
 rowBarColor=NULL,  colBarColor=colclass, 
 labrow="no", labcol="yes", adjrow=c(0.2, 0.0 ), 
 adjcol = c(1, 1) , rwangle=0, clangle=30,
-maptitle="My heatmap2")
+maptitle="My heatmap2",keyvalue="count")
 
 }
 

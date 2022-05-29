@@ -1,4 +1,4 @@
-gbetattest<-function(xx, W, nci, na, nb, level, C=1.22, side){
+gbetattest<-function(xx, W, nci, na, nb, level, padjust_methods,C=1.222,side){
     
     cn<-ncol(xx)	
     rn<-nrow(xx)
@@ -269,13 +269,20 @@ gbetattest<-function(xx, W, nci, na, nb, level, C=1.22, side){
     res<-cbind(as.data.frame(result), pv)
     res<-as.data.frame(res)
     res<-res[order(-pv),]
-    if(C==0){
-        adjp<-res$pv	
-    }else{
-        adjp<-mtpvadjust(pv=pv,C=C)
+    pv<-res$pv
+    if(padjust_methods=="TX"){
+    	if(C==0){
+    	adjp<-pv	
+    	}else{
+     padj<-mtpvadjust(pv=pv,C=C)
+     }
+     #res<-res[,-c(ncol(res)-1)]
+   }else{
+     padj<-p.adjust(p=pv, method = padjust_methods, n = length(pv))
     }
-    res<-res[,-ncol(res)]
-    res<-cbind(res,adjp)
+
+   res<-res[,-ncol(res)]
+   res<-cbind(res,padj)
     return(res)
     
 }

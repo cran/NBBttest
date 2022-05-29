@@ -41,19 +41,20 @@ betattest <-
             if(level=="sgRNA"){
                 if(abs(ma[i]-mb[i])==0){
                     aa[i]<-1
-                }else{
-                    aa[i]<-sqrt(abs(ma[i]-mb[i])/(1+(ma[i]+mb[i])))
+                }else{ 
+                 aa[i]<-sqrt(abs(ma[i]-mb[i])/(1+(ma[i]+mb[i])))
                     #  aa[i]<-abs(ma[i]-mb[i])/15
-                }
+              }
                 df[i]<-aa[i]*(Va[i]+Vb[i])^2/(Va[i]^2/(sum(sa)-1)
                                         +Vb[i]^2/(sum(sb)-1))
             }else if(level=="isoform"){
-                if(abs(ma[i]-mb[i])==0){
+                 if(abs(ma[i]-mb[i])==0){
                     aa[i]<-1
-                }else{
-                    aa[i]<-sqrt(abs(ma[i]-mb[i])/(1+(ma[i]+mb[i])))
+                }else{ 
+                 aa[i]<-sqrt(abs(ma[i]-mb[i])/(1+(ma[i]+mb[i])))
                     #  aa[i]<-abs(ma[i]-mb[i])/15
-                }
+              }
+              
                 df[i]<-aa[i]*((Va[i]+Vb[i])^2/(Va[i]^2/(ma[i]-1)+Vb[i]^2/(mb[i]-1)))
                 #                          df[i]<-(Va[i]+Vb[i])^2/(Va[i]^2/(na-1)
                 #                       +Vb[i]^2/(nb-1))

@@ -1,6 +1,6 @@
 mbetattest<-
     function(X, nci, na, nb, alpha=0.05, norm="no",
-                   C=0,side="both", level="sgRNA"){
+                   side="both", level="sgRNA",padjust_methods,C=1.222){
         
   #     X<-as.data.frame(X)
   cn<-ncol(X)
@@ -56,7 +56,7 @@ mbetattest<-
         }else{	
             NX<-X	
         }
-    
+   
     #   NX<-cbind(as.data.frame(row.names(NX)),NX)
     #  print(head(NX))
         
@@ -80,10 +80,9 @@ mbetattest<-
                      r2=nb, sn=30, alpha=alpha)			
         }
         
-        
         Betattest<-gbetattest(xx=NX, W=w, nci=nci,
-         na=na, nb=nb,level=level, C=C,side=side)
-        
+         na=na, nb=nb,level=level, padjust_methods,C=1.222,side=side)
+
         res<-cbind(Betattest, w)
         res<-as.data.frame(res)	
         if(length(jj)==0){
